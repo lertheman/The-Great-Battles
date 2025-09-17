@@ -15,11 +15,11 @@ public class Battle
         defender = initDefender;
     }
 
-    public Fighter attacker() {
+    public Fighter getAttacker() {
         return attacker;
     }
 
-    public Fighter defender(){
+    public Fighter getDefender(){
         return defender;
     }
 
