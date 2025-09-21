@@ -11,11 +11,12 @@ public class Main
 
         Battle battle = new Battle(fighter1, fighter2);
         
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 3; i++) {
             battle.printRoundUpdate();
             battle.takeTurn();
             battle.swapFighters();
         }
         
+        battle.takeTurn();
     }
 }
