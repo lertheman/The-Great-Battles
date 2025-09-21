@@ -39,10 +39,10 @@ public class Fighter
     }
 
     public int dealDamage() {
-        attackDamage = rng.nextInt(attackDamage) + 1;
-        System.out.println(getName() + " deals " + getAttackDamage() + " damage");
+        int damage = rng.nextInt(attackDamage) + 1;
+        System.out.println(getName() + " deals " + damage + " damage");
 
-        return getAttackDamage();
+        return damage;
     }
 
     public void takeDamage(int amount) { 
