@@ -40,14 +40,14 @@ public class Fighter
 
     public int dealDamage() {
         attackDamage = rng.nextInt(attackDamage) + 1;
-        System.out.println(name + " deals " + attackDamage + " damage");
+        System.out.println(getName() + " deals " + getAttackDamage() + " damage");
 
-        return attackDamage;
+        return getAttackDamage();
     }
 
     public void takeDamage(int amount) { 
         healthPoints = healthPoints - amount;
-        System.out.println(name + " was attacked and now has " + healthPoints + " health.");
+        System.out.println(getName() + " was attacked and now has " + getHealthPoints() + " health.");
 
     }
 
