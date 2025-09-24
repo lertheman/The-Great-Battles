@@ -1,6 +1,8 @@
 
 /**
- * 
+ * This is the Main class which calls both the fighter and battle class to let users simulate a fight between 2 fighters.
+ * @author Tyler Caldwell
+ * @version A Level 9/24/2025
  */
 public class Main
 {
