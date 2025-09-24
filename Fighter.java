@@ -60,6 +60,7 @@ public class Fighter
     
     public void heal() {
         int healed = rng.nextInt(healthPoints) + 1;
+        healthPoints = healthPoints + healed;
         System.out.println(getName() + " healed and now has " + getHealthPoints() + " health.");
     }
     
