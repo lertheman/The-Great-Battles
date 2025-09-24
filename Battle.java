@@ -11,11 +11,13 @@ public class Battle
     private Fighter defender;
     private int numRounds; 
     private Scanner scan;
+    private boolean battleOver;
     public Battle(Fighter initAttacker, Fighter initDefender){
         attacker = initAttacker;
         defender = initDefender;
         numRounds = 0;
         scan = new Scanner(System.in);
+        battleOver = false;
     }
 
     public Fighter getAttacker() {
@@ -30,6 +32,10 @@ public class Battle
         return numRounds;
     }
 
+    public boolean getBattleOver() {
+        return battleOver;
+    }
+
     public void printRoundUpdate(){
         System.out.println("Round " + getNumRounds());
         System.out.println(attacker.getName() + ": " + attacker.getHealthPoints() + " " + defender.getName() + ": " + defender.getHealthPoints());
@@ -40,7 +46,11 @@ public class Battle
         String choice = scan.nextLine();
         if(choice.equals("attack")){
             int amount = attacker.dealDamage();
-            defender.takeDamage(amount);    
+            defender.takeDamage(amount);   
+            if(defender.getHealthPoints() <= 0){
+                battleOver = true;
+                System.out.println("The battle has ended!");
+            }
         } else if(choice.equals("heal")){
             attacker.heal();
 
@@ -53,16 +63,16 @@ public class Battle
     public void printStartInfo(){
         System.out.println("Welcome to a fight between " + attacker.getName() + " and " + defender.getName());
         System.out.println( attacker.toString() + " " + defender.toString());
-        
+
     }
-    
+
     public void printEndInfo(){
         System.out.println("The battle it over. " + "The attacker " + attacker.getName() + " has " + attacker.getHealthPoints() + " health left.");  
-        System.out.println("The battle it over. " + "The attacker " + defender.getName() + " has " + defender.getHealthPoints() + " health left.");
+        System.out.println("The battle it over. " + "The defender " + defender.getName() + " has " + defender.getHealthPoints() + " health left.");
         if(attacker.getHealthPoints() < defender.getHealthPoints()){
             System.out.println(defender.getName() + " has won the fight.");
         } else if(attacker.getHealthPoints() > defender.getHealthPoints()){
-             System.out.println(attacker.getName() + " has won the fight.");
+            System.out.println(attacker.getName() + " has won the fight.");
         }
     }
 
