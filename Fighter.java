@@ -21,10 +21,11 @@ public class Fighter
         healAmount = 15;
     }
 
-    public Fighter(String initName,int initHealthPoints,int initAttackDamage){
+    public Fighter(String initName,int initHealthPoints,int initAttackDamage, int initHealAmount){
         name = initName;   
         healthPoints = initHealthPoints;
         attackDamage = initAttackDamage;
+        healAmount = initHealAmount;
         rng = new Random();
     }
 
