@@ -11,12 +11,14 @@ public class Fighter
     private int healthPoints;
     private int attackDamage;
     private Random rng;
+    private int healAmount;
 
     public Fighter() {
         name = "Tyler";
         healthPoints = 100;
         attackDamage = 30;
         rng = new Random();
+        healAmount = 15;
     }
 
     public Fighter(String initName,int initHealthPoints,int initAttackDamage){
@@ -37,6 +39,10 @@ public class Fighter
     public int getAttackDamage() {
         return attackDamage;
     }
+    
+    public int getHealAmount() {
+        return healAmount;
+    }
 
     public int dealDamage() {
         int damage = rng.nextInt(attackDamage) + 1;
@@ -49,6 +55,15 @@ public class Fighter
         healthPoints = healthPoints - amount;
         System.out.println(getName() + " was attacked and now has " + getHealthPoints() + " health.");
 
+    }
+    
+    public void heal() {
+        int healed = rng.nextInt(healthPoints) + 1;
+        System.out.println(getName() + " healed and now has " + getHealthPoints() + " health.");
+    }
+    
+    public String toString() {
+        return getName() + " has " + getHealthPoints() + " health and can deal " + getAttackDamage() + " damage, and can heal " + getHealAmount() + ".";
     }
 
 }
