@@ -27,11 +27,11 @@ public class Fighter
      * This is the parameterized constructor that is also used to initialize a fighter, and where attributes (instance variables)
      * of the fighter can be set when creating a new fighter.
      */
-    public Fighter(String initName,int initHealthPoints,int initAttackDamage, int initHealAmount){
+    public Fighter(String initName,int initHealthPoints,int initAttackDamage){
         name = initName;   
         healthPoints = initHealthPoints;
         attackDamage = initAttackDamage;
-        healAmount = initHealAmount;
+        healAmount = 15;
         rng = new Random();
     }
 
