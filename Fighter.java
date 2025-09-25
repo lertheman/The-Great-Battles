@@ -27,11 +27,11 @@ public class Fighter
      * This is the parameterized constructor that is also used to initialize a fighter, and where attributes (instance variables)
      * of the fighter can be set when creating a new fighter.
      */
-    public Fighter(String initName,int initHealthPoints,int initAttackDamage){
+    public Fighter(String initName,int initHealthPoints,int initAttackDamage, int initHealAmount){
         name = initName;   
         healthPoints = initHealthPoints;
         attackDamage = initAttackDamage;
-        healAmount = 15;
+        healAmount = initHealAmount;
         rng = new Random();
     }
 
@@ -83,11 +83,11 @@ public class Fighter
     }
 
     /**
-     * This is theheal method which simulates a fighter healing to regain health.
+     * This is the heal method which simulates a fighter healing to regain health.
      */
     public void heal() {
-        healAmount = rng.nextInt(healAmount) + 1;
-        healthPoints = healthPoints + healAmount;
+        int newHealAmount = rng.nextInt(healAmount) + 1;
+        healthPoints += newHealAmount;
         System.out.println(getName() + " healed and now has " + getHealthPoints() + " health.");
     }
 

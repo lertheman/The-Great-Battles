@@ -99,8 +99,8 @@ public class Battle
      * It also discloses who won the fight. 
      */
     public void printEndInfo(){
-        System.out.println("The battle it over. " + "The attacker " + attacker.getName() + " has " + attacker.getHealthPoints() + " health left.");  
-        System.out.println("The battle it over. " + "The defender " + defender.getName() + " has " + defender.getHealthPoints() + " health left.");
+        System.out.println("The battle is over. " + "The attacker " + attacker.getName() + " has " + attacker.getHealthPoints() + " health left.");  
+        System.out.println("The battle is over. " + "The defender " + defender.getName() + " has " + defender.getHealthPoints() + " health left.");
         if(attacker.getHealthPoints() < defender.getHealthPoints()){
             System.out.println(defender.getName() + " has won the fight.");
         } else if(attacker.getHealthPoints() > defender.getHealthPoints()){
